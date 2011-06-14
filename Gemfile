@@ -10,6 +10,11 @@ gem 'oauth'
 gem 'opentransact'
 gem 'fb_graph'
 
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'pg', :require => 'pg'
+end
+
 group :test do
   gem 'turn', :require => false
 end
