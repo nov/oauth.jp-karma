@@ -1,0 +1,9 @@
+development: &defaults
+  client_id: cd6zvNdHY5rBZncJCFNyTHZ20dpUe1yC36NH1ZOj
+  client_secret: WxwCXN23U5gVzL4U8URdZSdCHmWneYIkGj3KhakM
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

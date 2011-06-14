@@ -1,0 +1,10 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  title: OAuth.jp Karma
+  description: Thanks for your contributions to OAuth
+  top:
+    title: Welcome to OAuth.jp Karma!
+  dashboard:
+    title: Dashboard

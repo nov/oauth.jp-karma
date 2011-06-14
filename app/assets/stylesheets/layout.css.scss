@@ -1,0 +1,57 @@
+@import "common_variables";
+
+#gritter-notice-wrapper {
+  .gritter-title, p {
+    line-height: 16px;
+  }
+  .error .gritter-title {
+    color: $light_red;
+  }
+  .warn .gritter-title {
+    color: $orange;
+  }
+  .notice .gritter-title {
+    color: $green;
+  }
+}
+
+body > header {
+  height: 60px;
+  margin-bottom: 15px;
+  padding: 3px 0 5px 65px;
+  background: url(/assets/logo.png) no-repeat top left;
+  h1 {
+    font-weight: normal;
+  }
+  p {
+    color: $gray;
+  }
+  a {
+    color: $gray - #333;
+    text-decoration: none;
+    &:hover {
+      color: $gray
+    }
+  }
+}
+
+body > footer {
+  color: $gray;
+  font-size: 13px;
+  text-align: right;
+  margin-top: 20px;
+  a {
+    color: $gray;
+    text-decoration: none;
+    &:hover {
+      color: $gray - #333;
+    }
+  }
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      padding-left: 15px;
+    }
+  }
+}
