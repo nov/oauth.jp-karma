@@ -21,13 +21,11 @@ module Authentication
   end
 
   def authentication_required!(e)
-    unauthenticate!
     flash[:error] = e.message
     redirect_to root_url
   end
 
   def anonymous_access_required!(e)
-    flash[:error] = e.message
     redirect_to dashboard_url
   end
 
@@ -35,14 +33,16 @@ module Authentication
     if session[:current_account]
       authenticate Account.find_by_id(session[:current_account])
     end
+  rescue ActiveRecord::RecordNotFound
+    unauthenticate!
   end
 
   def require_authentication
-    raise AuthenticationRequired unless authenticated?
+    raise AuthenticationRequired.new('Authentication Required') unless authenticated?
   end
 
   def require_anonymous_access
-    raise AnonymousAccessRequired if authenticated?
+    raise AnonymousAccessRequired.new if authenticated?
   end
 
   def authenticate(account)

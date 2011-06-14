@@ -15,6 +15,15 @@
   }
 }
 
+input:not([type=submit]) {
+  &:valid {
+    background: #dfd;
+  }
+  &:invalid {
+    background: #fdd;
+  }
+}
+
 body > header {
   height: 60px;
   margin-bottom: 15px;

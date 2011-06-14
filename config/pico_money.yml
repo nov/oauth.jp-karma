@@ -1,6 +1,9 @@
 development: &defaults
-  client_id: cd6zvNdHY5rBZncJCFNyTHZ20dpUe1yC36NH1ZOj
-  client_secret: WxwCXN23U5gVzL4U8URdZSdCHmWneYIkGj3KhakM
+  site: https://picomoney.com
+  organization: oauth-dot-jp
+  currency: oauth-dot-jp-karma
+  consumer_key: HKHC9wLfhkBlYrLZcMsvy6IAkyylXhhk4Qo8PRtl
+  consumer_secret: dmfl4genr8p4zuf8UccrdgTGxeLRd9RlouvDPbXc
 
 test:
   <<: *defaults

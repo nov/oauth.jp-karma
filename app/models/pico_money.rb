@@ -3,8 +3,14 @@ class PicoMoney < ActiveRecord::Base
 
   belongs_to :account
 
+  validate :identifier, presence: true, uniqueness: true
+  validate :token,      presence: true, uniqueness: true
+  validate :secret,     presence: true
+  validate :profile,    url: true
+  validate :thumbnail,  url: true
+
   def identity
-    api_request({}) do
+    handle_response({}) do
       access_token.get '/about_user'
     end
   end
@@ -16,7 +22,7 @@ class PicoMoney < ActiveRecord::Base
     OAuth::AccessToken.new(self.class.client, self.token, self.secret)
   end
 
-  def api_request(if_failed = nil)
+  def handle_response(failure_response = nil)
     response = yield
     JSON.parse(response.body).with_indifferent_access
   rescue => e
@@ -26,26 +32,38 @@ class PicoMoney < ActiveRecord::Base
     else
       # something others?
     end
-    if_failed
+    failure_response
   end
 
   class << self
+    extend ActiveSupport::Memoizable
+
     def config
-      @config ||= YAML.load_file("#{Rails.root}/config/pico_money.yml")[Rails.env].symbolize_keys
+      YAML.load_file("#{Rails.root}/config/pico_money.yml")[Rails.env].symbolize_keys
     rescue Errno::ENOENT => e
       raise StandardError.new("config/pico_money.yml could not be loaded.")
     end
+    memoize :config
 
     def client
-      client = OAuth::Consumer.new(
-        config[:client_id],
-        config[:client_secret],
-        site: 'https://picomoney.com'
+      OAuth::Consumer.new(
+        config[:consumer_key],
+        config[:consumer_secret],
+        site: config[:site]
       )
     end
 
+    def organization
+      find_by_identifier!(config[:organization])
+    end
+    memoize :organization
+
+    def transaction_url
+      File.join(config[:site], config[:currency])
+    end
+
     def request_token!(callback)
-      client.get_request_token(oauth_callback: callback)
+      client.get_request_token({oauth_callback: callback}, {scope: transaction_url})
     end
 
     def access_token!(token, secret, code)

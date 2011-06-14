@@ -1,0 +1,7 @@
+<%= form_for Transaction.new, :url => transactions_path do |f| %>
+  <%= f.label :to, t('transaction.to') %>
+  <%= f.email_field :to, :placeholder => 'Email' %>
+  <%= f.label :amount, t('transaction.amount') %>
+  <%= f.number_field :amount, :placeholder => '1-100' %>
+  <%= f.submit %>
+<% end %>
