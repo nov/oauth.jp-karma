@@ -1,7 +1,7 @@
 <%= form_for Transaction.new, :url => transactions_path do |f| %>
-  <%= f.label :to, 'labels.transaction.to'.t %>
-  <%= f.email_field :to, :placeholder => 'placeholders.transaction.to'.t %>
-  <%= f.label :amount, 'labels.transaction.amount'.t %>
-  <%= f.number_field :amount, :placeholder => 'placeholders.transaction.amount'.t %>
-  <%= f.submit %>
+  <%= f.label :to, 'label.transaction.to'.t %>
+  <%= f.email_field :to, :placeholder => 'placeholder.transaction.to'.t %>
+  <%= f.label :amount, 'label.transaction.amount'.t %>
+  <%= f.number_field :amount, :placeholder => 'placeholder.transaction.amount'.t %>
+  <%= f.submit 'submit.transaction.transfer'.t %>
 <% end %>

@@ -1,6 +1,6 @@
 <article>
-  <h1><%= 'titles.dashboard'.t %></h1>
+  <h1><%= 'title.dashboard'.t %></h1>
   <%= link_to image_tag(current_account.pico_money.thumbnail), current_account.pico_money.profile %>
   <%= render 'transactions/form' %>
-  <p><%= link_to 'links.logout'.t, session_path, method: :delete %></p>
+  <p><%= link_to 'link.logout'.t, session_path, method: :delete %></p>
 </article>

@@ -2,20 +2,30 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  titles:
+  title:
     site: OAuth.jp Karma
     top: Welcome to OAuth.jp Karma!
     dashboard: Dashboard
-  descriptions:
+  description:
     site: Thanks for your contributions to OAuth
-  labels:
+  label:
     transaction:
       to: To
       amount: Amount
-  placeholders:
+  placeholder:
     transaction:
       to: info@oauth.jp
       amount: 1-100
-  links:
+  submit:
+    transaction:
+      transfer: Transfer
+  link:
     login: Login with PicoMoney account
     logout: Logout
+  flash:
+    title:
+      welcome: Welcome @%{identifier}!
+      transaction_completed: Transaction Completed!
+    description:
+      welcome: Contribute Japanese OAuth community and get OAuth.jp Karma :)
+      transaction_completed: Just sent %{amount} Karma to %{to}.

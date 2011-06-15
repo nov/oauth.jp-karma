@@ -4,10 +4,13 @@ class TransactionsController < ApplicationController
   rescue_from OpenTransact::HttpException, with: :opentransact_error
 
   def create
-    current_account.transactions.create!(params[:transaction])
+    transaction = current_account.transactions.create!(params[:transaction])
     flash[:notice] = {
-      title: 'Succeeded'.t,
-      text: 'Just sent {amount} of Karma {to}'.t(:amount => amount, :to => to)
+      title: 'flash.title.transaction_completed'.t,
+      text: 'flash.description.transaction_completed'.t(
+        :amount => transaction.amount,
+        :to => transaction.to
+      )
     }
     redirect_to dashboard_url
   end

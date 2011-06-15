@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
     )
     authenticate account
     flash[:notice] = {
-      title: "Hi, @#{current_account.pico_money.identifier}!",
-      text:  "Contribute to OAuth and get OAuth.jp Karma :)",
+      title: 'flash.title.welcome'.t(:identifier => current_account.pico_money.identifier),
+      text:  'flash.description.welcome'.t,
       image: current_account.pico_money.thumbnail
     }
     redirect_to dashboard_url
