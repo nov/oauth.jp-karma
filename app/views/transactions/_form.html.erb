@@ -5,7 +5,7 @@
   </div>
   <div class="amount">
     <%= f.label :amount, 'label.transaction.amount'.t %>
-    <%= f.number_field :amount, :placeholder => 'placeholder.transaction.amount'.t %>
+    <%= f.number_field :amount %>
   </div>
   <%= f.submit 'submit.transaction.transfer'.t, class: :button %>
 <% end %>

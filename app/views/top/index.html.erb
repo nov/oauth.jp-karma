@@ -1,6 +1,6 @@
 <article>
   <h1><%= 'title.top'.t %></h1>
-  <%= textilize 'description.top'.t %>
+  <%= textilize 'description.top'.t(:signup_bonus => Account::SIGNUP_BONUS) %>
   <nav>
     <%= link_to 'link.login'.t, session_path, method: :post, class: :button %>
   </nav>

@@ -4,12 +4,10 @@ class PicoMoney < ActiveRecord::Base
   belongs_to :account
 
   validates :account_id, uniqueness: true, allow_nil: true
-  validates :identifier, presence: true, uniqueness: true
-  validates :token,      presence: true, uniqueness: true
-  validates :secret,     presence: true
+  validates :identifier, uniqueness: true, presence: true
+  validates :token,      uniqueness: true, presence: true
+  validates :secret,                       presence: true
   validates :email_md5,  uniqueness: true, allow_nil: true
-  validates :profile,    url: true, allow_nil: true
-  validates :thumbnail,  url: true, allow_nil: true
 
   def identity
     handle_response({}) do

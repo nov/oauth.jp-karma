@@ -5,13 +5,12 @@ en:
   title:
     site: OAuth.jp Karma
     top: What's Karma?
-    dashboard: Dashboard
-    transactions: Give your Karma to others!
+    dashboard: Give your Karma to others!
   description:
     site: We Award OAuthers!
     top: |
       *OAuth.jp Karma* proves that you have supported OAuth community in Japan.
-      Connect with your *PicoMoney* account and get 100 Karma!
+      Connect with your *PicoMoney* account and get %{signup_bonus} Karma!
   label:
     transaction:
       to: TO
@@ -19,7 +18,6 @@ en:
   placeholder:
     transaction:
       to: info@oauth.jp
-      amount: 1-100
   submit:
     transaction:
       transfer: Transfer

@@ -20,6 +20,9 @@ a {
   &.button {
     @extend .button;
   }
+  img {
+    border: 1px solid $lightest_gray;
+  }
 }
 input {
   &:not([type=submit]) {
@@ -70,12 +73,14 @@ body > header {
 }
 
 body > .main {
-  padding: 30px 10px;
+  padding: 30px 10px 0;
 }
 
 body > footer {
+  clear: both;
   color: $gray;
   font-size: 13px;
+  padding-top: 30px;
   text-align: right;
   a {
     color: $gray;
