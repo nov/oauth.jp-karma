@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20110614145359) do
     t.string   "token"
     t.string   "secret"
     t.string   "identifier"
+    t.string   "email_md5"
     t.string   "profile"
     t.string   "thumbnail"
     t.datetime "created_at"

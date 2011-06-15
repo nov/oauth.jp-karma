@@ -7,7 +7,7 @@ class PicoMoney < ActiveRecord::Base
   validates :identifier, presence: true, uniqueness: true
   validates :token,      presence: true, uniqueness: true
   validates :secret,     presence: true
-  validates :email_md5,  presence: true
+  validates :email_md5,  uniqueness: true, allow_nil: true
   validates :profile,    url: true, allow_nil: true
   validates :thumbnail,  url: true, allow_nil: true
 
