@@ -6,7 +6,10 @@ class Transaction < ActiveRecord::Base
 
   validates :account_id, presence: true
   validates :to,         presence: true, email: true
-  validates :amount,     presence: true, numericality: {greater_than: 0,  less_than_or_equal_to: 100}
+  validates :amount,     presence: true, numericality: {
+    greater_than_or_equal_to: 1,
+    less_than_or_equal_to: 1000
+  }
 
   after_create :transfer!
 
