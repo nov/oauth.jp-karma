@@ -1,39 +1,41 @@
 @import "common_variables";
 
-body {
-  font-family: refrigerator-deluxe-1, refrigerator-deluxe-2, Helvetica, Arial, sans-serif;
-}
-input:not([type=submit]) {
-  &:valid {
-    background: #dfd;
-  }
-  &:invalid {
-    background: #fdd;
-  }
-}
 h1 {
   margin-bottom: 10px;
 }
 a {
   text-decoration: none;
   &.button {
-    background: $white -webkit-gradient(linear, 50% 0, 50% 100%, from(white), to(#CECECE));
-    border: 1px solid #B7B7B7;
-    border-radius: $default_radius;
-    color: $gray;
-    padding: 0.3em 1em;
-    text-shadow: white 0px 1px 1px;
-    vertical-align: middle;
-    &:hover, &:focus {
-      background-image: -webkit-gradient(linear, 50% 0, 50% 100%, from(#FCFCFC), to(#C6C6C6));
-      border-color: #AFAFAF;
-      text-decoration: underline;
+    @extend .button;
+  }
+}
+input {
+  &:not([type=submit]) {
+    &:valid {
+      background: #dfd;
     }
-    &:active {
-      background-image: -webkit-gradient(linear, 50% 0, 50% 100%, from(#CBCBCB), color-stop(0.4, lightGrey), color-stop(0.85, lightGrey), to(#E5E5E5));
-      border-color: #A7A7A7;
-      text-shadow: white 0px -1px -1px;
+    &:invalid {
+      background: #fdd;
     }
+  }
+}
+.button {
+  background: $white -webkit-gradient(linear, 50% 0, 50% 100%, from($white), to($lighter_gray));
+  border: 1px solid $lighter_gray;
+  border-radius: $default_radius;
+  color: $light_gray;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 0.3em 1em;
+  text-shadow: $white 0px 1px 1px;
+  vertical-align: middle;
+  &:hover, &:focus {
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, from($white), to($light_gray));
+  }
+  &:active {
+    -webkit-box-shadow: $lighter_gray 0px 0.08em 0.2em 1px inset;
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, from($lightest_gray), to($lightest_gray));
   }
 }
 
@@ -48,9 +50,9 @@ body > header {
     color: $gray;
   }
   a {
-    color: $gray - #333;
+    color: $dark_gray;
     &:hover {
-      color: $gray
+      color: $gray;
     }
   }
 }
@@ -67,7 +69,7 @@ body > footer {
     color: $gray;
     text-decoration: none;
     &:hover {
-      color: $gray - #333;
+      color: $dark_gray;
     }
   }
   ul {
