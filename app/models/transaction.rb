@@ -3,7 +3,7 @@ class Transaction < ActiveRecord::Base
   delegate :config, :organization, :transaction_url, to: PicoMoney
 
   validates :to, presence: true, email: true
-  validates :amount, numericality: {greater_than: 0,  less_than_or_equal_to: 100}
+  validates :amount, numericality: {greater_than: 0, less_than_or_equal_to: 100}
 
   after_create :transfer!
 
@@ -17,8 +17,8 @@ class Transaction < ActiveRecord::Base
   def client
     OpenTransact::Client.new(
       config.merge(
-        token:  organization._token_,
-        secret: organization.secret
+        token:  organization.access_token,
+        secret: organization.access_token_secret
       )
     )
   end

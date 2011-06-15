@@ -3,23 +3,23 @@ class PicoMoney < ActiveRecord::Base
 
   belongs_to :account
 
-  validate :identifier, presence: true, uniqueness: true
-  validate :_token_,    presence: true, uniqueness: true
-  validate :secret,     presence: true
-  validate :profile,    url: true
-  validate :thumbnail,  url: true
+  validate :identifier,          presence: true, uniqueness: true
+  validate :access_token,        presence: true, uniqueness: true
+  validate :access_token_secret, presence: true
+  validate :profile,             url: true
+  validate :thumbnail,           url: true
 
   def identity
     handle_response({}) do
-      access_token.get '/about_user'
+      client.get '/about_user'
     end
   end
   memoize :identity
 
   private
 
-  def access_token
-    OAuth::AccessToken.new(self.class.client, self._token_, self.secret)
+  def client
+    OAuth::AccessToken.new(self.class.client, self.access_token, self.access_token_secret)
   end
 
   def handle_response(failure_response = nil)
@@ -71,17 +71,17 @@ class PicoMoney < ActiveRecord::Base
     end
 
     def authenticate!(token, secret, code)
-      access_token = access_token!(token, secret, code)
+      _access_token_ = access_token!(token, secret, code)
       identity = new(
-        _token_: access_token.token,
-        secret:  access_token.secret
+        access_token:        _access_token_.token,
+        access_token_secret: _access_token_.secret
       ).identity
       pico = find_or_initialize_by_identifier(identity[:login])
       pico.update_attributes!(
-        _token_:   access_token.token,
-        secret:    access_token.secret,
-        profile:   identity[:profile],
-        thumbnail: identity[:thumbnail_url]
+        access_token:        _access_token_.token,
+        access_token_secret: _access_token_.secret,
+        profile:             identity[:profile],
+        thumbnail:           identity[:thumbnail_url]
       )
       pico.account || Account.create!(pico_money: pico)
     end

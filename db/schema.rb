@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20110614145359) do
 
   create_table "pico_moneys", :force => true do |t|
     t.integer  "account_id"
-    t.string   "_token_"
-    t.string   "secret"
+    t.string   "access_token"
+    t.string   "access_token_secret"
     t.string   "identifier"
     t.string   "profile"
     t.string   "thumbnail"
