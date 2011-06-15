@@ -1,4 +1,7 @@
 <article>
   <h1><%= 'title.top'.t %></h1>
-  <p><%= link_to 'link.login'.t, session_path, method: :post %></p>
+  <%= textilize 'description.top'.t %>
+  <nav>
+    <%= link_to 'link.login'.t, session_path, method: :post, class: :button %>
+  </nav>
 </article>

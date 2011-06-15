@@ -4,11 +4,15 @@
 en:
   title:
     site: OAuth.jp Karma
-    top: Welcome to OAuth.jp Karma!
+    top: What's Karma?
     dashboard: Dashboard
     transactions: Give your Karma to others!
   description:
     site: We Award OAuthers!
+    top: |
+      *OAuth.jp Karma* proves that you have supported OAuth community in Japan.
+      You'll get 100 Karma when first signup with your *PicoMoney* account.
+      After that, award others who contributed to our community :)
   label:
     transaction:
       to: TO

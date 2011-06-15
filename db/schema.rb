@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20110614145359) do
 
   create_table "transactions", :force => true do |t|
     t.integer  "account_id"
-    t.integer  "amount",      :default => 1
+    t.integer  "amount",      :default => 100
     t.string   "to"
     t.string   "description"
     t.boolean  "completed",   :default => false
