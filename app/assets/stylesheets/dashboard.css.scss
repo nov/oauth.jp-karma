@@ -60,10 +60,13 @@ body.dashboard {
             padding: 4px;
           }
           &[type=email] {
-            width: 138px;
+            width: 142px;
           }
           &[type=number] {
             width: 65px;
+          }
+          &[type=submit] {
+            margin-right: 0;
           }
         }
       }
