@@ -2,6 +2,7 @@ class Transaction < ActiveRecord::Base
   extend ActiveSupport::Memoizable
   delegate :config, :organization, :transaction_url, to: PicoMoney
 
+  validates :account_id, presence: true
   validates :to, presence: true, email: true
   validates :amount, numericality: {greater_than: 0,  less_than_or_equal_to: 100}
 

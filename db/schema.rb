@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110614145359) do
     t.integer  "amount",      :default => 1
     t.string   "to"
     t.string   "description"
+    t.boolean  "completed",   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

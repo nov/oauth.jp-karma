@@ -3,11 +3,12 @@ class PicoMoney < ActiveRecord::Base
 
   belongs_to :account
 
-  validate :identifier, presence: true, uniqueness: true
-  validate :token,      presence: true, uniqueness: true
-  validate :secret,     presence: true
-  validate :profile,    url: true
-  validate :thumbnail,  url: true
+  validates :account_id, uniqueness: true, allow_nil: true
+  validates :identifier, presence: true, uniqueness: true
+  validates :token,      presence: true, uniqueness: true
+  validates :secret,     presence: true
+  validates :profile,    url: true, allow_nil: true
+  validates :thumbnail,  url: true, allow_nil: true
 
   def identity
     handle_response({}) do
@@ -83,7 +84,7 @@ class PicoMoney < ActiveRecord::Base
         profile:   identity[:profile],
         thumbnail: identity[:thumbnail_url]
       )
-      pico.account || Account.create!(pico_money: pico)
+      pico.account || pico.create_account
     end
   end
 
