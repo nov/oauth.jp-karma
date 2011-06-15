@@ -24,10 +24,13 @@ input:not([type=submit]) {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 body > header {
   height: 60px;
-  margin-bottom: 15px;
-  padding: 3px 0 5px 65px;
+  padding: 3px 0 0 65px;
   background: url(/assets/logo.png) no-repeat top left;
   h1 {
     font-weight: normal;
@@ -37,18 +40,20 @@ body > header {
   }
   a {
     color: $gray - #333;
-    text-decoration: none;
     &:hover {
       color: $gray
     }
   }
 }
 
+body > .main {
+  padding: 30px 10px;
+}
+
 body > footer {
   color: $gray;
   font-size: 13px;
   text-align: right;
-  margin-top: 20px;
   a {
     color: $gray;
     text-decoration: none;

@@ -1,5 +1,46 @@
 @import "common_variables";
 
 body.dashboard {
-  // Place scoped styles here
+  article {
+    margin-top: 20px;
+    a.identifier {
+      color: $dark_gray;
+    }
+    img {
+      width: 55px;
+      height: 55px;
+      float: left;
+      margin-right: 10px;
+    }
+    form {
+      clear: both;
+      .to, .amount {
+        float: left;
+        padding: 15px 0;
+      }
+      .to {
+        padding-right: 5px;
+      }
+      label, input {
+        display: block;
+      }
+      label {
+        font-weight: bold;
+      }
+      input {
+        font-size: 2em;
+        padding: 4px 7px;
+        &[type=email] {
+          width: 7em;
+        }
+        &[type=number] {
+          width: 3em;
+          text-align: right;
+        }
+        &[type=submit] {
+          clear: both;
+        }
+      }
+    }
+  }
 }

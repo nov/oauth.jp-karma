@@ -18,6 +18,19 @@ class PicoMoney < ActiveRecord::Base
   end
   memoize :identity
 
+  def wallet
+    handle_response({}) do
+      access_token.get "/wallet"
+    end
+  end
+  memoize :wallet
+
+  def karma
+    Array(wallet[:assets]).detect do |asset|
+      asset[:url] == self.class.transaction_url
+    end
+  end
+
   private
 
   def access_token

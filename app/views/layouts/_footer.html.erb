@@ -1,5 +1,8 @@
 <footer class="page_footer">
   <ul>
+    <% if authenticated? %>
+      <li><%= link_to 'link.logout'.t, session_path, method: :delete %></li>
+    <% end %>
     <li><small>&copy; 2011 <a href="http://matake.jp">nov matake</a></small></li>
   </ul>
 </footer>

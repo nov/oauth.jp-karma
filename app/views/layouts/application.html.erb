@@ -10,7 +10,9 @@
 </head>
 <%= content_tag :body, class: controller_name do %>
   <%= render 'layouts/header' %>
-  <%= yield %>
+  <div class="main">
+    <%= yield %>
+  </div>
   <%= render 'layouts/footer' %>
   <%= yield :bottom %>
 <% end %>

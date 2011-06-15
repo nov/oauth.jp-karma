@@ -6,12 +6,13 @@ en:
     site: OAuth.jp Karma
     top: Welcome to OAuth.jp Karma!
     dashboard: Dashboard
+    transactions: Give your Karma to others!
   description:
-    site: Thanks for your contributions to OAuth
+    site: We Award OAuthers!
   label:
     transaction:
-      to: To
-      amount: Amount
+      to: TO
+      amount: AMT
   placeholder:
     transaction:
       to: info@oauth.jp
@@ -29,3 +30,5 @@ en:
     description:
       welcome: Contribute Japanese OAuth community and get OAuth.jp Karma :)
       transaction_completed: Just sent %{amount} Karma to %{to}.
+  wallet:
+    balance: "Balance: %{balance}"
