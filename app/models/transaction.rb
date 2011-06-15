@@ -17,7 +17,7 @@ class Transaction < ActiveRecord::Base
   def client
     OpenTransact::Client.new(
       config.merge(
-        token:  organization._token_,
+        token:  organization.token,
         secret: organization.secret
       )
     )

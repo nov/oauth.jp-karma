@@ -4,7 +4,7 @@ class PicoMoney < ActiveRecord::Base
   belongs_to :account
 
   validate :identifier, presence: true, uniqueness: true
-  validate :_token_,    presence: true, uniqueness: true
+  validate :token,      presence: true, uniqueness: true
   validate :secret,     presence: true
   validate :profile,    url: true
   validate :thumbnail,  url: true
@@ -19,7 +19,7 @@ class PicoMoney < ActiveRecord::Base
   private
 
   def access_token
-    OAuth::AccessToken.new(self.class.client, self._token_, self.secret)
+    OAuth::AccessToken.new(self.class.client, self.token, self.secret)
   end
 
   def handle_response(failure_response = nil)
@@ -73,12 +73,12 @@ class PicoMoney < ActiveRecord::Base
     def authenticate!(token, secret, code)
       access_token = access_token!(token, secret, code)
       identity = new(
-        _token_: access_token.token,
-        secret:  access_token.secret
+        token:  access_token.token,
+        secret: access_token.secret
       ).identity
       pico = find_or_initialize_by_identifier(identity[:login])
       pico.update_attributes!(
-        _token_:   access_token.token,
+        token:     access_token.token,
         secret:    access_token.secret,
         profile:   identity[:profile],
         thumbnail: identity[:thumbnail_url]

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20110614145359) do
 
   create_table "pico_moneys", :force => true do |t|
     t.integer  "account_id"
-    t.string   "_token_"
+    t.string   "token"
     t.string   "secret"
     t.string   "identifier"
     t.string   "profile"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20110614145359) do
     t.integer  "amount",      :default => 1
     t.string   "to"
     t.string   "description"
-    t.boolean  "completed",   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
