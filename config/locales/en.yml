@@ -25,7 +25,7 @@ en:
     transaction:
       transfer: Transfer
   link:
-    login: Login with PicoMoney account
+    login: Connect with PicoMoney
     logout: Logout
   flash:
     title:
