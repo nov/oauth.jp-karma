@@ -29,6 +29,6 @@ en:
       transaction_completed: Transaction Completed!
     description:
       welcome: Contribute Japanese OAuth community and get OAuth.jp Karma :)
-      transaction_completed: Just sent %{amount} Karma to %{to}.
+      transaction_completed: Just sent %{amount} Karma to %{to}
   wallet:
     balance: "Balance: %{balance}"
