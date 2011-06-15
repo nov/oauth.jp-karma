@@ -7,6 +7,7 @@ class PicoMoney < ActiveRecord::Base
   validates :identifier, presence: true, uniqueness: true
   validates :token,      presence: true, uniqueness: true
   validates :secret,     presence: true
+  validates :email_md5,  presence: true
   validates :profile,    url: true, allow_nil: true
   validates :thumbnail,  url: true, allow_nil: true
 
@@ -54,10 +55,10 @@ class PicoMoney < ActiveRecord::Base
       )
     end
 
-    def organization
-      find_by_identifier!(config[:organization])
+    def issuer
+      find_by_identifier!(config[:issuer])
     end
-    memoize :organization
+    memoize :issuer
 
     def transaction_url
       File.join(config[:site], config[:currency])
@@ -81,10 +82,11 @@ class PicoMoney < ActiveRecord::Base
       pico.update_attributes!(
         token:     access_token.token,
         secret:    access_token.secret,
+        email_md5: identity[:email_md5],
         profile:   identity[:profile],
         thumbnail: identity[:thumbnail_url]
       )
-      pico.account || pico.create_account
+      pico.account || Account.create!(pico_money: pico)
     end
   end
 

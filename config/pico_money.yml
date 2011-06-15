@@ -1,6 +1,6 @@
 development: &defaults
   site: https://picomoney.com
-  organization: oauth-dot-jp
+  issuer: oauth-dot-jp
   currency: oauth-dot-jp-karma
   consumer_key: HKHC9wLfhkBlYrLZcMsvy6IAkyylXhhk4Qo8PRtl
   consumer_secret: dmfl4genr8p4zuf8UccrdgTGxeLRd9RlouvDPbXc
