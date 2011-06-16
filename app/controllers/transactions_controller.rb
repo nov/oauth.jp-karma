@@ -5,20 +5,21 @@ class TransactionsController < ApplicationController
 
   def create
     transaction = current_account.transactions.create!(params[:transaction])
-    flash[:notice] = {
+    redirect_to dashboard_url, notice: {
       title: 'flash.title.transaction_completed'.t,
       text: 'flash.description.transaction_completed'.t(
         :amount => transaction.amount,
         :to => transaction.to
-      )
+      ),
+      image: PicoMoney.issuer.thumbnail
     }
-    redirect_to dashboard_url
   end
 
   private
 
   def opentransact_error(e)
-    flash[:error] = e.message
-    redirect_to dashboard_url
+    redirect_to dashboard_url, flash: {
+      error: e.message
+    }
   end
 end

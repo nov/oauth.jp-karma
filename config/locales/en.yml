@@ -9,7 +9,7 @@ en:
   description:
     site: We Award OAuthers!
     top: |
-      *OAuth.jp Karma* proves that you have supported OAuth community in Japan.
+      *OAuth.jp Karma* proves that you have contributed to the OAuth community in Japan.
       
       Connect with your *PicoMoney* account and get %{signup_bonus} Karma!
   label:
@@ -28,7 +28,7 @@ en:
       welcome: Welcome @%{identifier}!
       transaction_completed: Transaction Completed!
     description:
-      welcome: Contribute Japanese OAuth community and get OAuth.jp Karma :)
+      welcome: Enjoy getting & transfering OAuth.jp Karma!
       transaction_completed: Just sent %{amount} Karma to %{to}
   wallet:
     balance: "Balance: %{balance}"

@@ -21,8 +21,9 @@ module Authentication
   end
 
   def authentication_required!(e)
-    flash[:error] = e.message
-    redirect_to root_url
+    redirect_to root_url, flash: {
+      error: e.message
+    }
   end
 
   def anonymous_access_required!(e)

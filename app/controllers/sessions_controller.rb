@@ -8,12 +8,11 @@ class SessionsController < ApplicationController
       params[:oauth_verifier]
     )
     authenticate account
-    flash[:notice] = {
+    redirect_to dashboard_url, notice: {
       title: 'flash.title.welcome'.t(:identifier => current_account.pico_money.identifier),
       text:  'flash.description.welcome'.t,
       image: current_account.pico_money.thumbnail
     }
-    redirect_to dashboard_url
   end
 
   def create
