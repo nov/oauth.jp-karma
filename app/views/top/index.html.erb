@@ -1,8 +1,8 @@
 <article>
   <h1><%= 'title.top'.t %></h1>
-  <%= textilize 'description.top'.t(:signup_bonus => Account::SIGNUP_BONUS) %>
+  <%= textilize 'description.top'.t(signup_bonus: Account::SIGNUP_BONUS) %>
   <nav>
-    <%= form_for :session, :url => session_path do |f| %>
+    <%= form_for :session, url: session_path do |f| %>
       <%= f.submit 'action.login'.t %>
     <% end %>
   </nav>

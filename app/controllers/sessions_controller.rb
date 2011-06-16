@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     )
     authenticate account
     redirect_to dashboard_url, notice: {
-      title: 'flash.title.welcome'.t(:identifier => current_account.pico_money.identifier),
+      title: 'flash.title.welcome'.t(identifier: current_account.pico_money.identifier),
       text:  'flash.description.welcome'.t,
       image: current_account.pico_money.thumbnail
     }

@@ -11,6 +11,8 @@ gem 'oauth'
 gem 'opentransact'
 gem 'fb_graph'
 gem 'html5_validators'
+gem 'validate_url'
+gem 'validate_email'
 gem 'RedCloth'
 
 group :production do

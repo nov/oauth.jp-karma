@@ -3,7 +3,7 @@
   <article>
     <header>
       <%= link_to image_tag(current_account.pico_money.thumbnail), current_account.pico_money.profile %>
-      <h2><%= link_to "@#{current_account.pico_money.identifier}", current_account.pico_money.profile, :class => :identifier %></h2>
+      <h2><%= link_to "@#{current_account.pico_money.identifier}", current_account.pico_money.profile, class: :identifier %></h2>
     </header>
     <%= render 'dashboard/wallet' if current_account.pico_money.karma %>
     <%= render 'transactions/form' %>

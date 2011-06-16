@@ -20,9 +20,6 @@ h1, h2, h3, h4, strong, b {
 }
 a {
   text-decoration: none;
-  img {
-    border: 1px solid $lightest_gray;
-  }
 }
 input {
   &[type=submit] {
