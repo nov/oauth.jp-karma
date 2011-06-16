@@ -6,11 +6,13 @@ class Account < ActiveRecord::Base
 
   SIGNUP_BONUS = 100
   def signup_bonus
-    PicoMoney.issuer.account.transactions.create!(
-      to: pico_money.email_md5,
-      amount: SIGNUP_BONUS,
-      description: ''
-    )
+    if pico_money.email_md5
+      PicoMoney.issuer.account.transactions.create!(
+        to: pico_money.email_md5,
+        amount: SIGNUP_BONUS,
+        description: ''
+      )
+    end
   rescue OpenTransact::HttpException
     # ignore
   end

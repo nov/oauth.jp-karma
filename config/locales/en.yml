@@ -10,6 +10,7 @@ en:
     site: We Award OAuthers!
     top: |
       *OAuth.jp Karma* proves that you have supported OAuth community in Japan.
+      
       Connect with your *PicoMoney* account and get %{signup_bonus} Karma!
   label:
     transaction:
