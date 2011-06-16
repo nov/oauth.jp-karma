@@ -11,7 +11,7 @@ en:
     top: |
       *OAuth.jp Karma* proves that you have contributed to the OAuth community in Japan.
       
-      Connect with your *PicoMoney* account and get %{signup_bonus} Karma!
+      Do you already have *OAuth.jp Karma*? Then Connect with your *PicoMoney* account and start awarding others!
   label:
     transaction:
       to: TO
