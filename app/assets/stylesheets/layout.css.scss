@@ -17,14 +17,43 @@
 
 a {
   text-decoration: none;
-  &.button {
-    @extend .button;
-  }
   img {
     border: 1px solid $lightest_gray;
   }
 }
 input {
+  &[type=submit] {
+    background: $white -webkit-gradient(
+      linear, left top, left bottom,
+      from($white),
+      to($lighter_gray)
+    );
+    border: 1px solid $lighter_gray;
+    border-radius: $default_radius;
+    color: $light_gray - #111;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 1.5em;
+    padding: 0.3em 1em;
+    text-shadow: $white 0px 1px 1px;
+    vertical-align: middle;
+    &:hover, &:focus {
+      background-image: -webkit-gradient(
+        linear, left top, left bottom,
+        from($white),
+        to($light_gray)
+      );
+    }
+    &:active {
+      -webkit-box-shadow: $lighter_gray 0px 0.08em 0.2em 1px inset;
+      background-image: -webkit-gradient(
+        linear, left top, left bottom,
+        from($lightest_gray),
+        to($lightest_gray)
+      );
+    }
+  }
   &:not([type=submit]) {
     &:valid {
       background: #dfd;
@@ -32,37 +61,6 @@ input {
     &:invalid {
       background: #fdd;
     }
-  }
-}
-.button {
-  background: $white -webkit-gradient(
-    linear, left top, left bottom,
-    from($white),
-    to($lighter_gray)
-  );
-  border: 1px solid $lighter_gray;
-  border-radius: $default_radius;
-  color: $light_gray - #111;
-  display: inline-block;
-  font-size: 16px;
-  line-height: 1.5em;
-  padding: 0.3em 1em;
-  text-shadow: $white 0px 1px 1px;
-  vertical-align: middle;
-  &:hover, &:focus {
-    background-image: -webkit-gradient(
-      linear, left top, left bottom,
-      from($white),
-      to($light_gray)
-    );
-  }
-  &:active {
-    -webkit-box-shadow: $lighter_gray 0px 0.08em 0.2em 1px inset;
-    background-image: -webkit-gradient(
-      linear, left top, left bottom,
-      from($lightest_gray),
-      to($lightest_gray)
-    );
   }
 }
 

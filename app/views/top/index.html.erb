@@ -2,6 +2,8 @@
   <h1><%= 'title.top'.t %></h1>
   <%= textilize 'description.top'.t(:signup_bonus => Account::SIGNUP_BONUS) %>
   <nav>
-    <%= link_to 'link.login'.t, session_path, method: :post, class: :button %>
+    <%= form_for :session, :url => session_path do |f| %>
+      <%= f.submit 'action.login'.t %>
+    <% end %>
   </nav>
 </article>
