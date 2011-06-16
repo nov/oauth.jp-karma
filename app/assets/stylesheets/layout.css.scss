@@ -26,6 +26,7 @@ a {
 }
 input {
   &[type=submit] {
+    -webkit-box-shadow: $white 0px 0.08em 0.2em 1px inset;
     background: $white -webkit-gradient(
       linear, left top, left bottom,
       from($white),
