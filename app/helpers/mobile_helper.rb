@@ -7,7 +7,7 @@ module MobileHelper
     end
 
     def apple_app_icon_link_tag
-      link_tag :'apple-touch-icon', href: image_path('logo.png')
+      link_tag :'apple-touch-icon', href: image_path('icon.png')
     end
   end
   include Apple
