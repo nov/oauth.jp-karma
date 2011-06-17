@@ -1,0 +1,5 @@
+<nav>
+  <%= form_for :session, url: session_path, method: :delete do |f| %>
+    <%= f.submit 'sessions.destroy'.t %>
+  <% end %>
+</nav>

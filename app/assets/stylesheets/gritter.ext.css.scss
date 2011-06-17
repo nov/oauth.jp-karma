@@ -1,0 +1,16 @@
+@import "common_variables";
+
+#gritter-notice-wrapper {
+  .gritter-title, p {
+    line-height: 16px;
+  }
+  .error .gritter-title {
+    color: $light_red;
+  }
+  .warn .gritter-title {
+    color: $orange;
+  }
+  .notice .gritter-title {
+    color: $green;
+  }
+}

@@ -1,0 +1,5 @@
+<p>
+  <%= 'transaction.balance'.t(
+    balance: number_to_currency(current_account.pico_money.karma[:balance].to_i, :unit => '', :precision => 0)
+  ) %>
+</p>
