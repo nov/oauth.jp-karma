@@ -2,74 +2,22 @@
 
 body.dashboard {
   article {
-    margin-top: 20px;
-    a.identifier {
-      color: $dark_gray;
-    }
-    img {
-      width: 55px;
-      height: 55px;
-      float: left;
-      margin-right: 10px;
-    }
-    form {
-      @extend .clearfix;
-      clear: both;
-      float: left;
-      .to, .amount {
+    aside {
+      background: $white;
+      border: 8px solid $lightest_gray;
+      border-radius: $default_radius;
+      padding: 10px;
+      margin: 15px 0;
+      img {
+        width: 55px;
+        height: 55px;
         float: left;
-        padding-top: 15px;
-      }
-      .to {
-        padding-right: 5px;
-      }
-      label, input {
-        display: block;
-      }
-      label {
-        font-weight: bold;
-      }
-      input {
-        &:not([type=submit]) {
-          font-size: 24px;
-          padding: 4px 7px;
-        }
-        &[type=email] {
-          width: 200px;
-        }
-        &[type=number] {
-          width: 80px;
-        }
-        &[type=submit] {
-          clear: both;
-          float: right;
-          margin-right: 30px;
-        }
+        margin-right: 10px;
       }
     }
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  body.dashboard {
-    article {
-      form {
-        input {
-          &:not([type=submit]) {
-            font-size: 18px;
-            padding: 4px;
-          }
-          &[type=email] {
-            width: 142px;
-          }
-          &[type=number] {
-            width: 65px;
-          }
-          &[type=submit] {
-            margin-right: 0;
-          }
-        }
-      }
+    @include transaction-form(330px);
+    @media only screen and (max-width: 480px) {
+      @include transaction-form(240px);
     }
   }
 }

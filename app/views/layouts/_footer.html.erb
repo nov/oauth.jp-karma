@@ -1,8 +1,7 @@
 <footer class="page_footer">
+  <%= render 'sessions/destroy' if authenticated? %>
   <ul>
-    <% if authenticated? %>
-      <li><%= link_to 'action.logout'.t, session_path, method: :delete %></li>
-    <% end %>
-    <li><small>&copy; 2011 <a href="http://matake.jp">nov matake</a></small></li>
-  </ul>
+    <li><small>&copy; <%= link_to 'nov matake', 'http://matake.jp'%></small></li>
+    <li>powered by <%= link_to 'PicoMoney.com', 'http://picomoney.com' %></li>
+  </li>
 </footer>

@@ -23,7 +23,7 @@ $default_radius: 8px;
 
 /* util */
 
-.clearfix {
+@mixin clearfix {
   &:after {
     clear: both;
     content: ' ';
@@ -33,5 +33,42 @@ $default_radius: 8px;
     visibility: hidden;
     width: 0;
     height: 0;
+  }
+}
+
+@mixin transaction-form($width) {
+  $input_padding: 4px;
+  $to_width: $width * 0.7;
+  $amount_width: $width * 0.3;
+  form {
+    @include clearfix;
+    label {
+      font-weight: bold;
+    }
+    input {
+      &:not([type=submit]) {
+        font-size: 24px;
+        padding: $input_padding;
+      }
+      &[type=submit] {
+        float: right;
+      }
+    }
+    .to, .amount {
+      float: left;
+    }
+    .to {
+      margin-right: 10px;
+      width: $to_width;
+      input {
+        width: $to_width - $input_padding * 2;
+      }
+    }
+    .amount {
+      width: $amount_width;
+      input {
+        width: $amount_width - $input_padding * 2;
+      }
+    }
   }
 }

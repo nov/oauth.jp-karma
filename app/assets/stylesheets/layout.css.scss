@@ -1,25 +1,17 @@
 @import "common_variables";
 
-#gritter-notice-wrapper {
-  .gritter-title, p {
-    line-height: 16px;
-  }
-  .error .gritter-title {
-    color: $light_red;
-  }
-  .warn .gritter-title {
-    color: $orange;
-  }
-  .notice .gritter-title {
-    color: $green;
-  }
-}
-
 h1, h2, h3, h4, strong, b {
   font-weight: 600;
 }
 a {
+  color: $gray;
   text-decoration: none;
+  &:hover {
+    color: $dark_gray;
+  }
+}
+ul {
+  list-style: none;
 }
 input {
   &[type=submit] {
@@ -81,27 +73,28 @@ body > header {
 }
 
 body > .main {
-  padding: 30px 10px 0;
+  padding: 30px 0;
 }
 
 body > footer {
   clear: both;
   color: $gray;
   font-size: 13px;
-  padding-top: 30px;
   text-align: right;
-  a {
-    color: $gray;
-    text-decoration: none;
-    &:hover {
-      color: $dark_gray;
-    }
-  }
   ul {
     list-style: none;
     li {
       display: inline-block;
-      padding-left: 15px;
+      &:not(:first-child) {
+        margin-left: 15px;
+      }
     }
   }
+  input[type=submit] {
+    font-size: 13px;
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 11px;
+  }
 }
+

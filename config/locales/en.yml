@@ -4,25 +4,14 @@
 en:
   title:
     site: OAuth.jp Karma
-    top: OAuth.jp Karma?
+    top: What's this?
     dashboard: Award friends!
   description:
-    site: For all OAuthers in Japan
+    site: Award OAuthers in Japan
     top: |
-      *OAuth.jp Karma* proves that you have contributed to the OAuth community in Japan.
+      *OAuth.jp Karma* proves your contributions to the OAuth community in Japan.
       
-      Do you already have *OAuth.jp Karma* on *PicoMoney.com*? Then start awarding others!
-  label:
-    transaction:
-      to: TO
-      amount: AMT
-  placeholder:
-    transaction:
-      to: info@oauth.jp
-  action:
-    login: Connect with PicoMoney
-    logout: Logout
-    transfer: Transfer
+      Get *100 Signup Bonus Karma* and award your friends!
   flash:
     title:
       welcome: Welcome @%{identifier}!
@@ -30,5 +19,12 @@ en:
     description:
       welcome: Award friends using OAuth.jp Karma!
       transaction_completed: Just sent %{amount} Karma to %{to}
-  wallet:
-    balance: "Balance: %{balance}"
+  transaction:
+    wallet: Your wallet
+    balance: %{balance} Karma
+    create: Send Karma
+    to: To
+    amount: AMT
+  sessions:
+    new: Start awarding friends!
+    destroy: Logout

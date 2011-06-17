@@ -28,7 +28,7 @@ class PicoMoney < ActiveRecord::Base
   def karma
     Array(wallet[:assets]).detect do |asset|
       asset[:url] == self.class.transaction_url
-    end
+    end || {}
   end
 
   private
