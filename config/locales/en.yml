@@ -7,11 +7,11 @@ en:
     top: OAuth.jp Karma?
     dashboard: Award friends!
   description:
-    site: Let's award OAuthers!
+    site: For all OAuthers in Japan
     top: |
       *OAuth.jp Karma* proves that you have contributed to the OAuth community in Japan.
       
-      Do you already have *OAuth.jp Karma*? Then Connect with your *PicoMoney* account and start awarding others!
+      Do you already have *OAuth.jp Karma* on *PicoMoney.com*? Then start awarding others!
   label:
     transaction:
       to: TO
@@ -28,7 +28,7 @@ en:
       welcome: Welcome @%{identifier}!
       transaction_completed: Transaction Completed!
     description:
-      welcome: Enjoy getting & transfering OAuth.jp Karma!
+      welcome: Award friends using OAuth.jp Karma!
       transaction_completed: Just sent %{amount} Karma to %{to}
   wallet:
     balance: "Balance: %{balance}"
