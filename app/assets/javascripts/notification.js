@@ -8,7 +8,6 @@ $(function () {
     }
   };
 
-  $.gritter.options.position = 'bottom-right';
   var notify = function (flash, default_options) {
     if (typeof flash == 'string') {
       flash = parse(flash);
