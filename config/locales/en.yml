@@ -11,7 +11,7 @@ en:
     top: |
       *OAuth.jp Karma* proves your contributions to the OAuth community in Japan.
       
-      Get *100 Signup Bonus Karma* and award your friends!
+      Get *%{signup_bonus} Signup Bonus Karma* and award your friends!
   flash:
     title:
       welcome: Welcome @%{identifier}!
@@ -26,5 +26,5 @@ en:
     to: To
     amount: AMT
   sessions:
-    new: Start awarding friends!
+    new: Start Awarding Friends!
     destroy: Logout

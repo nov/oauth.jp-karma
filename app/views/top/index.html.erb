@@ -1,5 +1,5 @@
 <article>
   <h1><%= 'title.top'.t %></h1>
-  <%= textilize 'description.top'.t %>
+  <%= textilize 'description.top'.t(:signup_bonus => Account::SIGNUP_BONUS) %>
   <%= render 'sessions/new' %>
 </article>
