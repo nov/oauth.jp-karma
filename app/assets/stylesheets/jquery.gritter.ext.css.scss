@@ -1,6 +1,10 @@
 @import "common_variables";
 
 #gritter-notice-wrapper {
+  &.bottom-right {
+    bottom: 0;
+    right: 10px;
+  }
   .gritter-title, p {
     line-height: 16px;
   }
