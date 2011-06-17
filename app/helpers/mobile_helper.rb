@@ -13,7 +13,7 @@ module MobileHelper
   include Apple
 
   def viewport_meta_tag
-    meta_tag :viewport, {
+    meta_tag :viewport, [
       'width=device-width',
       'initial-scale=1.0',
       'user-scalable=no'
