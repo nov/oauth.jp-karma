@@ -16,7 +16,7 @@ body.dashboard {
       }
     }
     @include transaction-form(330px);
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 479px) {
       @include transaction-form(240px);
     }
   }

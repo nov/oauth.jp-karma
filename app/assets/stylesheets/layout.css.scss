@@ -57,44 +57,42 @@ input {
   }
 }
 
-body > header {
-  height: 60px;
-  padding: 3px 0 0 65px;
-  background: url(/assets/logo.png) no-repeat top left;
-  p {
+body {
+  &> header {
+    background: url(/assets/logo.png) no-repeat top left;
     color: $gray;
-  }
-  a {
-    color: $dark_gray;
-    &:hover {
-      color: $gray;
-    }
-  }
-}
-
-body > .main {
-  padding: 30px 0;
-}
-
-body > footer {
-  clear: both;
-  color: $gray;
-  font-size: 13px;
-  text-align: right;
-  ul {
-    list-style: none;
-    li {
-      display: inline-block;
-      &:not(:first-child) {
-        margin-left: 15px;
+    height: 60px;
+    padding: 3px 0 0 65px;
+    a {
+      color: $dark_gray;
+      &:hover {
+        color: $gray;
       }
     }
   }
-  input[type=submit] {
-    font-size: 13px;
+  &> footer {
+    $font-size: 13px;
+    color: $gray;
+    font-size: $font-size;
+    text-align: right;
+    ul {
+      li {
+        display: inline-block;
+        &:not(:first-child) {
+          margin-left: 15px;
+        }
+      }
+    }
+    input[type=submit] {
+      font-size: $font-size;
+    }
+    @media only screen and (max-width: 479px) {
+      font-size: $font-size - 2px;
+    }
   }
-  @media only screen and (max-width: 480px) {
-    font-size: 11px;
+  &> .main {
+    padding: 30px 0;
+    @include clearfix;
   }
 }
 
