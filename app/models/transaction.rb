@@ -5,7 +5,7 @@ class Transaction < ActiveRecord::Base
   belongs_to :account
 
   validates :account_id, presence: true
-  validates :to,         presence: true, email: true, unless: :md5_hashed?
+  validates :to,         presence: true, email: {unless: :md5_hashed?}
   validates :amount,     presence: true, numericality: {
     greater_than_or_equal_to: 1,
     less_than_or_equal_to: 1000
@@ -21,6 +21,7 @@ class Transaction < ActiveRecord::Base
   private
 
   def md5_hashed?
+    to.present? &&
     to.length == 32 &&
     to =~ /^[0-9a-z]+$/
   end
