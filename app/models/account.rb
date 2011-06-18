@@ -4,6 +4,8 @@ class Account < ActiveRecord::Base
 
   after_create :signup_bonus
 
+  private
+
   SIGNUP_BONUS = 100
   def signup_bonus
     if pico_money.email_md5
