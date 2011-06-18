@@ -1,7 +1,7 @@
 <%= form_for Transaction.new, url: transactions_path do |f| %>
   <div class="to">
     <%= f.label :to, 'transaction.to'.t %>
-    <%= f.email_field :to, placeholder: 'info@oauth.jp', autocomplete: true %>
+    <%= f.email_field :to, placeholder: 'info@oauth.jp' %>
   </div>
   <div class="amount">
     <%= f.label :amount, 'transaction.amount'.t %>
